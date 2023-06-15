@@ -24,6 +24,7 @@ sh train_sbn_seq_goldsilver.sh
 sh predict_sbn_silver.sh
 # or you can use the English parser to parse the English test translated from Chinese
 sh predict_sbn_silver_trans.sh
+```
 
 ## Evaluation
  - Once you get the sequential DRS data, you can use it to compare it with the gold DRS data.
