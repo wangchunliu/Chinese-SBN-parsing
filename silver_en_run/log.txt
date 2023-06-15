@@ -1,0 +1,361 @@
+nohup: ignoring input
+[2023-04-28 15:39:32,646 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 15:39:49,909 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-04-28 15:39:50,056 INFO]  * vocabulary size. source = 38436; target = 39666
+[2023-04-28 15:39:50,058 INFO] Building model...
+/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torch/nn/modules/rnn.py:65: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+[2023-04-28 15:39:54,503 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(38436, 450, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(450, 450, dropout=0.2, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(39666, 450, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.2, inplace=False)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.2, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(1350, 900)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=900, out_features=900, bias=False)
+      (linear_out): Linear(in_features=1800, out_features=900, bias=False)
+    )
+    (copy_attn): GlobalAttention(
+      (linear_in): Linear(in_features=900, out_features=900, bias=False)
+      (linear_out): Linear(in_features=1800, out_features=900, bias=False)
+    )
+  )
+  (generator): CopyGenerator(
+    (linear): Linear(in_features=900, out_features=39666, bias=True)
+    (linear_copy): Linear(in_features=900, out_features=1, bias=True)
+    (softmax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+[2023-04-28 15:39:54,505 INFO] encoder: 20543400
+[2023-04-28 15:39:54,506 INFO] decoder: 66556867
+[2023-04-28 15:39:54,506 INFO] * number of parameters: 87100267
+[2023-04-28 15:39:54,508 INFO] Start training...
+[2023-04-28 15:39:54,510 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 15:40:12,143 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torchtext/legacy/data/field.py:353: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  var = torch.tensor(arr, dtype=self.dtype, device=device)
+[2023-04-28 15:46:51,252 INFO] Step 1000/40001; acc:  84.43; ppl:  2.17; xent: 0.78; lr: 0.00200; 295/747 tok/s;    399 sec
+using the GPU
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-04-28 15:53:37,727 INFO] Step 2000/40001; acc:  89.08; ppl:  1.61; xent: 0.48; lr: 0.00200; 2218/9312 tok/s;    806 sec
+[2023-04-28 16:00:11,313 INFO] Step 3000/40001; acc:  88.70; ppl:  1.87; xent: 0.63; lr: 0.00200; 325/741 tok/s;   1199 sec
+[2023-04-28 16:05:26,969 INFO] Step 4000/40001; acc:  87.99; ppl:  1.83; xent: 0.61; lr: 0.00200; 1681/4250 tok/s;   1515 sec
+[2023-04-28 16:07:47,573 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 16:08:06,674 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-04-28 16:12:55,014 INFO] Step 5000/40001; acc:  85.57; ppl:  1.97; xent: 0.68; lr: 0.00200; 406/1439 tok/s;   1963 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-04-28 16:19:47,236 INFO] Step 6000/40001; acc:  93.46; ppl:  1.30; xent: 0.26; lr: 0.00200; 3467/9570 tok/s;   2375 sec
+[2023-04-28 16:27:06,041 INFO] Step 7000/40001; acc:  92.47; ppl:  1.43; xent: 0.36; lr: 0.00200; 3042/9470 tok/s;   2814 sec
+[2023-04-28 16:34:24,260 INFO] Step 8000/40001; acc:  90.30; ppl:  1.45; xent: 0.37; lr: 0.00200; 368/1552 tok/s;   3252 sec
+[2023-04-28 16:38:39,075 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 16:38:58,836 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-04-28 16:41:22,674 INFO] Step 9000/40001; acc:  91.54; ppl:  1.37; xent: 0.32; lr: 0.00200; 379/1121 tok/s;   3671 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-04-28 16:49:21,463 INFO] Step 10000/40001; acc:  90.59; ppl:  1.38; xent: 0.32; lr: 0.00200; 481/1101 tok/s;   4149 sec
+[2023-04-28 16:49:21,495 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt, number of examples
+[2023-04-28 16:49:21,626 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt, number of examples: 1000
+[2023-04-28 16:49:48,657 INFO] Validation perplexity: 2.0054
+[2023-04-28 16:49:48,661 INFO] Validation accuracy: 89.935
+[2023-04-28 16:49:48,662 INFO] Saving checkpoint /home/p289796/ZH-SBN/SBN_parsing_openmt/model/sbn-silver-en/sbn-model_step_10000.pt
+[2023-04-28 17:03:15,103 INFO] Step 11000/40001; acc:  92.93; ppl:  1.32; xent: 0.28; lr: 0.00200; 276/608 tok/s;   4983 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt will be trained by Model
+[2023-04-28 17:15:39,279 INFO] Step 12000/40001; acc:  96.98; ppl:  1.13; xent: 0.12; lr: 0.00200; 219/1056 tok/s;   5727 sec
+[2023-04-28 17:27:38,227 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 17:27:57,890 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-04-28 17:29:13,085 INFO] Step 13000/40001; acc:  89.82; ppl:  1.45; xent: 0.37; lr: 0.00200; 331/1150 tok/s;   6541 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-04-28 17:42:52,561 INFO] Step 14000/40001; acc:  93.74; ppl:  1.29; xent: 0.25; lr: 0.00200; 290/869 tok/s;   7360 sec
+[2023-04-28 17:56:42,781 INFO] Step 15000/40001; acc:  91.69; ppl:  1.44; xent: 0.36; lr: 0.00200; 326/843 tok/s;   8191 sec
+[2023-04-28 18:10:09,446 INFO] Step 16000/40001; acc:  95.71; ppl:  1.22; xent: 0.20; lr: 0.00200; 219/770 tok/s;   8997 sec
+[2023-04-28 18:23:42,544 INFO] Step 17000/40001; acc:  89.61; ppl:  1.51; xent: 0.41; lr: 0.00200; 395/1004 tok/s;   9810 sec
+[2023-04-28 18:26:47,095 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 18:27:06,762 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-04-28 18:37:41,824 INFO] Step 18000/40001; acc:  97.00; ppl:  1.15; xent: 0.14; lr: 0.00200; 264/708 tok/s;  10650 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-04-28 18:50:38,553 INFO] Step 19000/40001; acc:  90.44; ppl:  1.39; xent: 0.33; lr: 0.00200; 356/1305 tok/s;  11426 sec
+[2023-04-28 19:02:31,659 INFO] Step 20000/40001; acc:  96.37; ppl:  1.17; xent: 0.15; lr: 0.00200; 211/941 tok/s;  12140 sec
+[2023-04-28 19:02:31,702 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt, number of examples
+[2023-04-28 19:02:31,793 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt, number of examples: 1000
+[2023-04-28 19:02:40,492 INFO] Validation perplexity: 2.1432
+[2023-04-28 19:02:40,495 INFO] Validation accuracy: 90.2011
+[2023-04-28 19:02:40,496 INFO] Saving checkpoint /home/p289796/ZH-SBN/SBN_parsing_openmt/model/sbn-silver-en/sbn-model_step_20000.pt
+[2023-04-28 19:09:00,342 INFO] Step 21000/40001; acc:  88.83; ppl:  1.55; xent: 0.44; lr: 0.00200; 3892/9436 tok/s;  12528 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt will be trained by Model
+[2023-04-28 19:12:42,051 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 19:13:01,558 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-04-28 19:16:13,537 INFO] Step 22000/40001; acc:  94.54; ppl:  1.24; xent: 0.22; lr: 0.00200; 352/872 tok/s;  12961 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-04-28 19:24:03,170 INFO] Step 23000/40001; acc:  92.91; ppl:  1.27; xent: 0.24; lr: 0.00200; 3600/10225 tok/s;  13431 sec
+[2023-04-28 19:31:18,118 INFO] Step 24000/40001; acc:  91.54; ppl:  1.33; xent: 0.28; lr: 0.00200; 2409/10566 tok/s;  13866 sec
+[2023-04-28 19:38:24,284 INFO] Step 25000/40001; acc:  96.92; ppl:  1.11; xent: 0.10; lr: 0.00200; 3216/7068 tok/s;  14292 sec
+[2023-04-28 19:44:26,953 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 19:44:46,524 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-04-28 19:45:44,805 INFO] Step 26000/40001; acc:  92.77; ppl:  1.31; xent: 0.27; lr: 0.00200; 359/1053 tok/s;  14733 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-04-28 19:52:32,630 INFO] Step 27000/40001; acc:  66.07; ppl:  5.57; xent: 1.72; lr: 0.00200; 1523/4068 tok/s;  15140 sec
+[2023-04-28 20:00:41,277 INFO] Step 28000/40001; acc:  96.26; ppl:  1.14; xent: 0.13; lr: 0.00200; 240/602 tok/s;  15629 sec
+[2023-04-28 20:07:41,109 INFO] Step 29000/40001; acc:  74.17; ppl:  3.34; xent: 1.21; lr: 0.00200; 2578/6497 tok/s;  16049 sec
+[2023-04-28 20:14:36,264 INFO] Step 30000/40001; acc:  93.64; ppl:  1.28; xent: 0.24; lr: 0.00100; 4098/7827 tok/s;  16464 sec
+[2023-04-28 20:14:36,272 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt, number of examples
+[2023-04-28 20:14:36,363 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt, number of examples: 1000
+[2023-04-28 20:14:43,599 INFO] Validation perplexity: 2.25897
+[2023-04-28 20:14:43,604 INFO] Validation accuracy: 90.0118
+[2023-04-28 20:14:43,605 INFO] Saving checkpoint /home/p289796/ZH-SBN/SBN_parsing_openmt/model/sbn-silver-en/sbn-model_step_30000.pt
+[2023-04-28 20:18:50,361 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 20:19:09,954 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-04-28 20:25:48,059 INFO] Step 31000/40001; acc:  98.31; ppl:  1.07; xent: 0.07; lr: 0.00100; 3218/7628 tok/s;  17136 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt will be trained by Model
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-04-28 20:33:36,403 INFO] Step 32000/40001; acc:  97.74; ppl:  1.07; xent: 0.07; lr: 0.00050; 233/590 tok/s;  17604 sec
+[2023-04-28 20:41:08,986 INFO] Step 33000/40001; acc:  96.25; ppl:  1.13; xent: 0.12; lr: 0.00050; 253/633 tok/s;  18057 sec
+[2023-04-28 20:47:41,902 INFO] Step 34000/40001; acc:  95.83; ppl:  1.18; xent: 0.17; lr: 0.00025; 328/736 tok/s;  18450 sec
+[2023-04-28 20:50:17,903 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 20:50:37,599 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-04-28 20:54:08,054 INFO] Step 35000/40001; acc:  79.50; ppl:  2.25; xent: 0.81; lr: 0.00025; 1952/5150 tok/s;  18836 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-04-28 21:00:55,351 INFO] Step 36000/40001; acc:  88.59; ppl:  1.65; xent: 0.50; lr: 0.00013; 2281/6677 tok/s;  19243 sec
+[2023-04-28 21:06:54,743 INFO] Step 37000/40001; acc:  99.45; ppl:  1.02; xent: 0.02; lr: 0.00013; 2443/8260 tok/s;  19603 sec
+[2023-04-28 21:12:57,019 INFO] Step 38000/40001; acc:  99.03; ppl:  1.06; xent: 0.06; lr: 0.00006; 245/527 tok/s;  19965 sec
+[2023-04-28 21:18:22,423 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 21:18:42,206 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-04-28 21:20:40,865 INFO] Step 39000/40001; acc:  96.72; ppl:  1.12; xent: 0.11; lr: 0.00006; 332/639 tok/s;  20429 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-04-28 21:28:18,684 INFO] Step 40000/40001; acc:  89.34; ppl:  1.46; xent: 0.38; lr: 0.00003; 3302/10574 tok/s;  20887 sec
+[2023-04-28 21:28:18,726 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt, number of examples
+[2023-04-28 21:28:18,823 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt, number of examples: 1000
+[2023-04-28 21:28:28,082 INFO] Validation perplexity: 1.95978
+[2023-04-28 21:28:28,086 INFO] Validation accuracy: 91.9818
+[2023-04-28 21:28:28,086 INFO] Saving checkpoint /home/p289796/ZH-SBN/SBN_parsing_openmt/model/sbn-silver-en/sbn-model_step_40000.pt
+[2023-04-28 21:28:39,713 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-04-28 21:28:59,643 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.valid.pt will be trained by Model
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+nohup: ignoring input
+nohup: failed to run command 'train_sbn_seq_goldsilver.sh': No such file or directory
+nohup: ignoring input
+/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torch/cuda/__init__.py:143: UserWarning: 
+NVIDIA A40 with CUDA capability sm_86 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_70.
+If you want to use the NVIDIA A40 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(incompatible_device_warn.format(device_name, capability, " ".join(arch_list), device_name))
+[2023-05-22 17:25:07,301 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-22 17:25:24,786 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-22 17:25:24,937 INFO]  * vocabulary size. source = 38436; target = 39666
+[2023-05-22 17:25:24,937 INFO] Building model...
+/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torch/nn/modules/rnn.py:65: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+using the GPU
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt/data/sbn-silver-en/sbn.train.pt will be trained by Model
+Traceback (most recent call last):
+  File "../train.py", line 119, in <module>
+    main(opt)
+  File "../train.py", line 52, in main
+    single_main(opt, 0)
+  File "/home/p289796/ZH-SBN/SBN_parsing_openmt/onmt/train_single.py", line 117, in main
+    model = build_model(model_opt, opt, fields, checkpoint)
+  File "/home/p289796/ZH-SBN/SBN_parsing_openmt/onmt/model_builder.py", line 297, in build_model
+    use_gpu(opt), checkpoint)
+  File "/home/p289796/ZH-SBN/SBN_parsing_openmt/onmt/model_builder.py", line 288, in build_base_model
+    model.to(device)
+  File "/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torch/nn/modules/module.py", line 899, in to
+    return self._apply(convert)
+  File "/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torch/nn/modules/module.py", line 570, in _apply
+    module._apply(fn)
+  File "/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torch/nn/modules/module.py", line 570, in _apply
+    module._apply(fn)
+  File "/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 189, in _apply
+    self.flatten_parameters()
+  File "/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 179, in flatten_parameters
+    self.batch_first, bool(self.bidirectional))
+RuntimeError: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Traceback (most recent call last):
+  File "../train.py", line 11, in <module>
+    import onmt.opts as opts
+  File "/home/p289796/ZH-SBN/SBN_parsing_openmt/onmt/__init__.py", line 4, in <module>
+    import onmt.inputters
+  File "/home/p289796/ZH-SBN/SBN_parsing_openmt/onmt/inputters/__init__.py", line 6, in <module>
+    from onmt.inputters.inputter import collect_feature_vocabs, make_features, \
+  File "/home/p289796/ZH-SBN/SBN_parsing_openmt/onmt/inputters/inputter.py", line 16, in <module>
+    from onmt.inputters.dataset_base import UNK_WORD, PAD_WORD, BOS_WORD, EOS_WORD
+  File "/home/p289796/ZH-SBN/SBN_parsing_openmt/onmt/inputters/dataset_base.py", line 17, in <module>
+    class DatasetBase(torchtext.legacy.data.Dataset):
+AttributeError: module 'torchtext' has no attribute 'legacy'
+nohup: ignoring input
+[2023-05-23 11:47:41,388 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 11:47:59,574 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-23 11:47:59,725 INFO]  * vocabulary size. source = 38436; target = 39666
+[2023-05-23 11:47:59,725 INFO] Building model...
+/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torch/nn/modules/rnn.py:65: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+[2023-05-23 11:48:04,045 INFO] NMTModel(
+  (encoder): RNNEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(38436, 450, padding_idx=1)
+        )
+      )
+    )
+    (rnn): LSTM(450, 450, dropout=0.2, bidirectional=True)
+  )
+  (decoder): InputFeedRNNDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(39666, 450, padding_idx=1)
+        )
+      )
+    )
+    (dropout): Dropout(p=0.2, inplace=False)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.2, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(1350, 900)
+      )
+    )
+    (attn): GlobalAttention(
+      (linear_in): Linear(in_features=900, out_features=900, bias=False)
+      (linear_out): Linear(in_features=1800, out_features=900, bias=False)
+    )
+    (copy_attn): GlobalAttention(
+      (linear_in): Linear(in_features=900, out_features=900, bias=False)
+      (linear_out): Linear(in_features=1800, out_features=900, bias=False)
+    )
+  )
+  (generator): CopyGenerator(
+    (linear): Linear(in_features=900, out_features=39666, bias=True)
+    (linear_copy): Linear(in_features=900, out_features=1, bias=True)
+    (softmax): Softmax(dim=1)
+    (sigmoid): Sigmoid()
+  )
+)
+[2023-05-23 11:48:04,046 INFO] encoder: 20543400
+[2023-05-23 11:48:04,046 INFO] decoder: 66556867
+[2023-05-23 11:48:04,046 INFO] * number of parameters: 87100267
+[2023-05-23 11:48:04,047 INFO] Start training...
+[2023-05-23 11:48:04,048 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 11:48:26,419 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+/home/p289796/anaconda3/envs/orca/lib/python3.6/site-packages/torchtext/legacy/data/field.py:353: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  var = torch.tensor(arr, dtype=self.dtype, device=device)
+[2023-05-23 11:52:09,593 INFO] Step 1000/40001; acc:  84.43; ppl:  2.21; xent: 0.79; lr: 0.00200; 1652/4184 tok/s;    223 sec
+using the GPU
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-05-23 11:55:51,453 INFO] Step 2000/40001; acc:  89.21; ppl:  1.61; xent: 0.47; lr: 0.00200; 1279/5371 tok/s;    445 sec
+[2023-05-23 11:59:35,341 INFO] Step 3000/40001; acc:  88.53; ppl:  1.86; xent: 0.62; lr: 0.00200; 1706/3891 tok/s;    669 sec
+[2023-05-23 12:03:23,328 INFO] Step 4000/40001; acc:  87.15; ppl:  1.83; xent: 0.60; lr: 0.00200; 757/1914 tok/s;    897 sec
+[2023-05-23 12:04:32,433 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 12:04:53,522 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-23 12:07:30,245 INFO] Step 5000/40001; acc:  84.12; ppl:  2.00; xent: 0.69; lr: 0.00200; 1501/5319 tok/s;   1144 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-05-23 12:11:12,317 INFO] Step 6000/40001; acc:  93.71; ppl:  1.31; xent: 0.27; lr: 0.00200; 2016/5566 tok/s;   1366 sec
+[2023-05-23 12:14:50,841 INFO] Step 7000/40001; acc:  90.97; ppl:  1.45; xent: 0.37; lr: 0.00200; 1896/5902 tok/s;   1584 sec
+[2023-05-23 12:18:24,299 INFO] Step 8000/40001; acc:  91.27; ppl:  1.43; xent: 0.36; lr: 0.00200; 1691/7140 tok/s;   1798 sec
+[2023-05-23 12:20:43,150 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 12:21:04,125 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-23 12:22:21,049 INFO] Step 9000/40001; acc:  90.17; ppl:  1.47; xent: 0.39; lr: 0.00200; 2438/7208 tok/s;   2035 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-05-23 12:25:56,002 INFO] Step 10000/40001; acc:  92.26; ppl:  1.36; xent: 0.31; lr: 0.00200; 2015/4610 tok/s;   2250 sec
+[2023-05-23 12:25:56,016 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt, number of examples
+[2023-05-23 12:25:56,110 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt, number of examples: 1000
+[2023-05-23 12:26:04,625 INFO] Validation perplexity: 2.01108
+[2023-05-23 12:26:04,630 INFO] Validation accuracy: 89.6638
+[2023-05-23 12:26:04,632 INFO] Saving checkpoint /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/model/sbn-silver-en/sbn-model_step_10000.pt
+[2023-05-23 12:32:05,396 INFO] Step 11000/40001; acc:  93.12; ppl:  1.31; xent: 0.27; lr: 0.00200; 1044/2296 tok/s;   2619 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt will be trained by Model
+[2023-05-23 12:35:39,105 INFO] Step 12000/40001; acc:  97.08; ppl:  1.12; xent: 0.12; lr: 0.00200; 883/4258 tok/s;   2833 sec
+[2023-05-23 12:38:55,914 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 12:39:15,964 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-23 12:39:27,472 INFO] Step 13000/40001; acc:  90.72; ppl:  1.44; xent: 0.36; lr: 0.00200; 1653/5733 tok/s;   3061 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-05-23 12:43:03,494 INFO] Step 14000/40001; acc:  92.31; ppl:  1.38; xent: 0.32; lr: 0.00200; 1762/5280 tok/s;   3277 sec
+[2023-05-23 12:46:42,422 INFO] Step 15000/40001; acc:  90.88; ppl:  1.47; xent: 0.39; lr: 0.00200; 1894/4907 tok/s;   3496 sec
+[2023-05-23 12:50:20,309 INFO] Step 16000/40001; acc:  94.53; ppl:  1.26; xent: 0.23; lr: 0.00200; 1421/5005 tok/s;   3714 sec
+[2023-05-23 12:53:56,797 INFO] Step 17000/40001; acc:  88.72; ppl:  1.54; xent: 0.43; lr: 0.00200; 2450/6230 tok/s;   3930 sec
+[2023-05-23 12:54:47,975 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 12:55:09,090 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-23 12:57:47,276 INFO] Step 18000/40001; acc:  94.01; ppl:  1.21; xent: 0.19; lr: 0.00200; 1689/4531 tok/s;   4161 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-05-23 13:01:25,227 INFO] Step 19000/40001; acc:  91.20; ppl:  1.40; xent: 0.33; lr: 0.00200; 1818/6651 tok/s;   4379 sec
+[2023-05-23 13:05:03,442 INFO] Step 20000/40001; acc:  96.49; ppl:  1.15; xent: 0.14; lr: 0.00200; 1199/5337 tok/s;   4597 sec
+[2023-05-23 13:05:03,449 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt, number of examples
+[2023-05-23 13:05:03,543 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt, number of examples: 1000
+[2023-05-23 13:05:12,700 INFO] Validation perplexity: 2.12533
+[2023-05-23 13:05:12,705 INFO] Validation accuracy: 90.1448
+[2023-05-23 13:05:12,705 INFO] Saving checkpoint /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/model/sbn-silver-en/sbn-model_step_20000.pt
+[2023-05-23 13:08:45,891 INFO] Step 21000/40001; acc:  89.04; ppl:  1.47; xent: 0.38; lr: 0.00200; 1961/4755 tok/s;   4819 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt will be trained by Model
+[2023-05-23 13:10:44,455 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 13:11:05,268 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-23 13:12:29,225 INFO] Step 22000/40001; acc:  92.86; ppl:  1.29; xent: 0.26; lr: 0.00200; 1840/4562 tok/s;   5043 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-05-23 13:16:05,146 INFO] Step 23000/40001; acc:  92.67; ppl:  1.33; xent: 0.28; lr: 0.00200; 1838/5221 tok/s;   5259 sec
+[2023-05-23 13:19:42,814 INFO] Step 24000/40001; acc:  91.63; ppl:  1.38; xent: 0.32; lr: 0.00200; 1289/5654 tok/s;   5476 sec
+[2023-05-23 13:23:18,546 INFO] Step 25000/40001; acc:  95.26; ppl:  1.15; xent: 0.14; lr: 0.00200; 1664/3658 tok/s;   5692 sec
+[2023-05-23 13:26:22,900 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 13:26:43,510 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-23 13:27:09,660 INFO] Step 26000/40001; acc:  92.18; ppl:  1.32; xent: 0.27; lr: 0.00200; 3035/8895 tok/s;   5923 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-05-23 13:30:37,869 INFO] Step 27000/40001; acc:  66.61; ppl:  4.77; xent: 1.56; lr: 0.00200; 1076/2874 tok/s;   6131 sec
+[2023-05-23 13:34:13,293 INFO] Step 28000/40001; acc:  95.22; ppl:  1.15; xent: 0.14; lr: 0.00200; 1824/4570 tok/s;   6347 sec
+[2023-05-23 13:37:50,881 INFO] Step 29000/40001; acc:  74.63; ppl:  3.26; xent: 1.18; lr: 0.00200; 1608/4052 tok/s;   6564 sec
+[2023-05-23 13:41:26,399 INFO] Step 30000/40001; acc:  93.64; ppl:  1.33; xent: 0.28; lr: 0.00100; 2188/4179 tok/s;   6780 sec
+[2023-05-23 13:41:26,406 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt, number of examples
+[2023-05-23 13:41:26,510 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt, number of examples: 1000
+[2023-05-23 13:41:35,117 INFO] Validation perplexity: 2.20239
+[2023-05-23 13:41:35,122 INFO] Validation accuracy: 90.1346
+[2023-05-23 13:41:35,124 INFO] Saving checkpoint /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/model/sbn-silver-en/sbn-model_step_30000.pt
+[2023-05-23 13:44:55,977 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 13:45:16,622 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-23 13:48:23,079 INFO] Step 31000/40001; acc:  97.18; ppl:  1.11; xent: 0.10; lr: 0.00100; 1820/4314 tok/s;   7197 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt will be trained by Model
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-05-23 13:52:01,025 INFO] Step 32000/40001; acc:  98.56; ppl:  1.07; xent: 0.06; lr: 0.00050; 1769/4487 tok/s;   7415 sec
+[2023-05-23 13:55:35,093 INFO] Step 33000/40001; acc:  98.96; ppl:  1.06; xent: 0.06; lr: 0.00050; 1549/3872 tok/s;   7629 sec
+[2023-05-23 13:59:13,686 INFO] Step 34000/40001; acc:  96.00; ppl:  1.17; xent: 0.16; lr: 0.00025; 1775/3986 tok/s;   7847 sec
+[2023-05-23 14:00:53,266 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 14:01:14,182 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-23 14:03:08,736 INFO] Step 35000/40001; acc:  79.81; ppl:  2.27; xent: 0.82; lr: 0.00025; 1180/3113 tok/s;   8082 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-05-23 14:06:47,584 INFO] Step 36000/40001; acc:  89.10; ppl:  1.56; xent: 0.44; lr: 0.00013; 1207/3532 tok/s;   8301 sec
+[2023-05-23 14:10:24,877 INFO] Step 37000/40001; acc:  99.45; ppl:  1.03; xent: 0.03; lr: 0.00013; 1398/4728 tok/s;   8518 sec
+[2023-05-23 14:13:58,182 INFO] Step 38000/40001; acc:  99.27; ppl:  1.02; xent: 0.02; lr: 0.00006; 2194/4719 tok/s;   8732 sec
+[2023-05-23 14:16:45,775 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 14:17:06,869 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+[2023-05-23 14:17:48,756 INFO] Step 39000/40001; acc:  97.81; ppl:  1.10; xent: 0.10; lr: 0.00006; 1255/2414 tok/s;   8962 sec
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
+[2023-05-23 14:21:28,437 INFO] Step 40000/40001; acc:  89.64; ppl:  1.44; xent: 0.36; lr: 0.00003; 2146/6873 tok/s;   9182 sec
+[2023-05-23 14:21:28,444 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt, number of examples
+[2023-05-23 14:21:28,552 INFO] Loading valid dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt, number of examples: 1000
+[2023-05-23 14:21:37,103 INFO] Validation perplexity: 1.95315
+[2023-05-23 14:21:37,108 INFO] Validation accuracy: 92.0023
+[2023-05-23 14:21:37,109 INFO] Saving checkpoint /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/model/sbn-silver-en/sbn-model_step_40000.pt
+[2023-05-23 14:21:49,188 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples
+[2023-05-23 14:22:11,052 INFO] Loading train dataset from /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt, number of examples: 137781
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.valid.pt will be trained by Model
+This is the data file /home/p289796/ZH-SBN/SBN_parsing_openmt_changed/data/sbn-silver-en/sbn.train.pt will be trained by Model
