@@ -9,7 +9,7 @@
  - python>=3.6
  - pytorch==1.7.1+cu110
  - torchtext==1.8.1
- - cuda==11.1
+ - cuda==11.0
  
 ## Preprocess data
  -  First, you need to get the data, which you can download directly. Once you get the data including English text and Chinese text and DRS for English text, you need to use tokenizer HanLP and Moses to preprocess Chinese and English respectively.
