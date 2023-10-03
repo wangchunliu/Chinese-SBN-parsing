@@ -34,4 +34,16 @@ sh predict_sbn_silver_trans.sh
 ## Evaluation
  - Once you get the sequential DRS data, you can use it to compare it with the gold DRS data.
  - Our evaluation tool is provided in [SBN-evaluation-tool](https://github.com/wangchunliu/SBN-evaluation-tool)
+
+## Cite
+```
+@inproceedings{Wang_Zhang_Bos_2023,  
+ title={Discourse {R}epresentation {S}tructure {P}arsing for {C}hinese}, 
+ author={Wang, Chunliu and Zhang, Xiao and Bos, Johan}, 
+ booktitle={Proceedings of the 4th Natural Logic meets Machine Learning (NALOMAIV 2023).},
+ year={2023}, 
+ month={Jun}, 
+ publisher = "Association for Computational Linguistics",
+}
+```
  
